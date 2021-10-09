@@ -16,4 +16,12 @@ class ProgramTest {
 		Assertions.assertEquals(80, f.getMonths());
 	}
 
+	@Test
+	public void validadeIllegalArgumentExceptionWhenInvalidData() {
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+		Financing f = new Financing(100000.0, 2000.0, 20);
+		});
+	}
+	
 }
