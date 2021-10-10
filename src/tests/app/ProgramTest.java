@@ -39,4 +39,19 @@ class ProgramTest {
 		});
 	}
 	
+	@Test
+	public void setIncomeShouldUpdatetDataWhenValidData() {
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		f.setIncome(2100.0);
+		Assertions.assertEquals(2100.0, f.getIncome());
+	}
+
+	@Test
+	public void setIncomeShouldIllegalArgumentExceptionWhenInvalidData() {
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			Financing f = new Financing(100000.0, 2000.0, 80);
+			f.setIncome(1800.0);
+		});
+	}
+	
 }
