@@ -69,4 +69,9 @@ class ProgramTest {
 		});
 	}
 	
+	@Test
+	public void entrySholdCalculateEntryCorrectly() {
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		Assertions.assertEquals(20000.0, f.entry());
+	}
 }
