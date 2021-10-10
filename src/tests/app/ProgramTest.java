@@ -24,4 +24,19 @@ class ProgramTest {
 		});
 	}
 	
+	@Test
+	public void setTotalAmountShouldUpdatetDataWhenValidData() {
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		f.setTotalAmount(80000.0);
+		Assertions.assertEquals(80000.0, f.getTotalAmount());
+	}
+
+	@Test
+	public void setTotalAmountShouldIllegalArgumentExceptionWhenInvalidData() {
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			Financing f = new Financing(100000.0, 2000.0, 80);
+			f.setTotalAmount(110000.0);
+		});
+	}
+	
 }
